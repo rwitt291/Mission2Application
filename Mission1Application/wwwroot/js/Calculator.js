@@ -1,27 +1,41 @@
-﻿function addPercentInputs() {
-    var assignments = parseInt$("#intAssignments").val();
-    var group = parseInt$("#intGroup").val();
-    var quizzes = parseInt$("#intQuizzes").val();
-    var exams = parseInt$("#intExams").val();
-    var intex = parseInt$("#intINTEX").val();
+﻿function totalGradePerc() {
+    // Grabs the values from index.html
+    var assignments = parseInt($("#assignments").val());
+    var groupProject = parseInt($("#groupProject").val());
+    var quizzes = parseInt($("#quizzes").val());
+    var exams = parseInt($("#exams").val());
+    var intex = parseInt($("#intex").val());
+
+    // Adds up values received by index.html and initializes letterGrade
+    var gradePercent = (assignments + groupProject + quizzes + exams + intex);
+    var letterGrade = "";
+
+    // Changes the letter grade based on gradePercent
+    if (gradePercent >= 94) {
+        letterGrade = "A"
+    } else if (gradePercent >= 90) {
+        letterGrade = "A-"
+    } else if (gradePercent >= 87) {
+        letterGrade = "B+"
+    } else if (gradePercent >= 84) {
+        letterGrade = "B"
+    } else if (gradePercent >= 80) {
+        letterGrade = "B-"
+    } else if (gradePercent >= 77) {
+        letterGrade = "C+"
+    } else if (gradePercent >= 74) {
+        letterGrade = "C"
+    } else if (gradePercent >= 70) {
+        letterGrade = "C-"
+    } else if (gradePercent >= 67) {
+        letterGrade = "D+"
+    } else if (gradePercent >= 64) {
+        letterGrade = "D"
+    } else if (gradePercent >= 60) {
+        letterGrade = "D-"
+    } else {
+        letterGrade = "E"
+    }
+    // What to display in alert
+    alert("Calculated Grade: " + gradePercent + ", Letter Grade: " + letterGrade);;
 }
-
-var CalcGrade = (assignments + group + quizzes + exams + intex);
-let letter = "";
-
-if (CalcGrade < 60) {
-    letter = "F";
-} else if (CalcGrade < 70) {
-    letter = "D";
-} else if (CalcGrade < 80) {
-    letter = "C";
-} else if (CalcGrade < 90) {
-    letter = "B";
-} else {
-    letter = "A";
-}
-
-
-$("#butnSend").click(function () {
-    alert("Calculated Grade: " + CalcGrade + ", Letter Grade: " + letter);
-})
