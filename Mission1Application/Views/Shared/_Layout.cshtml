@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <link href="lib/boostrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/default.css" rel="stylesheet" />
+    <link rel="shortcut icon icon" type="image/jpg" href="img/Tree Icon.jpg" />
+    <script src="lib/jquery/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <nav>
+        <a asp-controller="About" asp-action="Index">Home</a>
+        <a asp-controller="About" asp-action="GradeCalculator">Grade Calculator</a>
+    </nav>
+
+    <div>
+        
+        @RenderBody()
+    </div>
+
+    <script src="lib/boostrap/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
